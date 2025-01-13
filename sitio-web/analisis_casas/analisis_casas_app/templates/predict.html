@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block title %}
+    Formulario de Predicción
+{% endblock %}
+{% block content %}
+<main class="main_prediccion">
+    <h1 class="text-center mb-4">Formulario de Predicción de Precio</h1>
+    <form method="post" class="container p-4 border rounded bg-light">
+        {% csrf_token %}
+        <div class="row g-4">
+            <!-- Habitaciones -->
+            <div class="col-md-6">
+                <label for="id_bedrooms" class="form-label">
+                    Habitaciones
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Número de habitaciones en la propiedad.">ⓘ</span>
+                </label>
+                {{ form.bedrooms|attr:"class:form-control" }}
+            </div>
+
+            <!-- Baños -->
+            <div class="col-md-6">
+                <label for="id_bathrooms" class="form-label">
+                    Baños
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Número de baños en la propiedad.">ⓘ</span>
+                </label>
+                {{ form.bathrooms|attr:"class:form-control" }}
+            </div>
+
+            <!-- Área habitable -->
+            <div class="col-md-6">
+                <label for="id_sqft_living" class="form-label">
+                    Área habitable (sqft)
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Área habitable total en pies cuadrados.">ⓘ</span>
+                </label>
+                {{ form.sqft_living|attr:"class:form-control" }}
+            </div>
+
+            <!-- Área del lote -->
+            <div class="col-md-6">
+                <label for="id_sqft_lot" class="form-label">
+                    Área del lote (sqft)
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Tamaño total del terreno en pies cuadrados.">ⓘ</span>
+                </label>
+                {{ form.sqft_lot|attr:"class:form-control" }}
+            </div>
+
+            <!-- Pisos -->
+            <div class="col-md-6">
+                <label for="id_floors" class="form-label">
+                    Pisos
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Número de pisos o niveles en la propiedad.">ⓘ</span>
+                </label>
+                {{ form.floors|attr:"class:form-control" }}
+            </div>
+
+            <!-- Frente al agua -->
+            <div class="col-md-6">
+                <label for="id_waterfront" class="form-label">
+                    Frente al agua
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Si la propiedad está frente a un cuerpo de agua.">ⓘ</span>
+                </label>
+                {{ form.waterfront|attr:"class:form-control" }}
+            </div>
+
+            <!-- Vista -->
+            <div class="col-md-6">
+                <label for="id_view" class="form-label">
+                    Vista
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="
+                        0: Sin vista especial. <br>
+                        1: Vista parcial o limitada. <br>
+                        2: Vista moderada (por ejemplo, vista al vecindario). <br>
+                        3: Buena vista (por ejemplo, parque o río). <br>
+                        4: Vista excepcional (por ejemplo, mar, montaña).">ⓘ</span>
+                </label>
+                {{ form.view|attr:"class:form-control" }}
+            </div>
+
+            <!-- Condición -->
+            <div class="col-md-6">
+                <label for="id_condition" class="form-label">
+                    Condición
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Estado físico general de la propiedad. <br>
+                        1: Muy pobre.<br>
+                        2: Pobre.<br>
+                        3: Promedio.<br>
+                        4: Buena.<br>
+                        5: Excelente.">ⓘ</span>
+                </label>
+                {{ form.condition|attr:"class:form-control" }}
+            </div>
+
+            <!-- Calidad -->
+            <div class="col-md-6">
+                <label for="id_grade" class="form-label">
+                    Calidad
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Evalúa la calidad de los materiales.<br>
+                        1-3: Muy baja(terminados pobres).<br>
+                        4-6: Baja(aceptable pero sin lujos).<br>
+                        7-8: Promedio(materiales y acabados estándar).<br>
+                        9-10: Alta(acabados de buen gusto y mejorados).<br>
+                        11-13: Lujo(acabados de primera, diseño exclusivo).">ⓘ</span>
+                </label>
+                {{ form.grade|attr:"class:form-control" }}
+            </div>
+
+            <!-- Área sobre el suelo -->
+            <div class="col-md-6">
+                <label for="id_sqft_above" class="form-label">
+                    Área sobre el suelo (sqft)
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Área habitable por encima del nivel del suelo.">ⓘ</span>
+                </label>
+                {{ form.sqft_above|attr:"class:form-control" }}
+            </div>
+
+            <!-- Área del sótano -->
+            <div class="col-md-6">
+                <label for="id_sqft_basement" class="form-label">
+                    Área del sótano (sqft)
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Área habitable en el sótano.">ⓘ</span>
+                </label>
+                {{ form.sqft_basement|attr:"class:form-control" }}
+            </div>
+
+            <!-- Año de construcción -->
+            <div class="col-md-6">
+                <label for="id_yr_built" class="form-label">
+                    Año de construcción
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Año en que se construyó la propiedad.">ⓘ</span>
+                </label>
+                {{ form.yr_built|attr:"class:form-control" }}
+            </div>
+
+            <!-- Año de renovación -->
+            <div class="col-md-6">
+                <label for="id_yr_renovated" class="form-label">
+                    Año de renovación
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Año en que se renovó la propiedad, si aplica.">ⓘ</span>
+                </label>
+                {{ form.yr_renovated|attr:"class:form-control" }}
+            </div>
+
+            <!-- Código postal -->
+            <div class="col-md-6">
+                <label for="id_zipcode" class="form-label">
+                    Código postal
+                    <span class="tooltip-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Código postal de la propiedad.">ⓘ</span>
+                </label>
+                {{ form.zipcode|attr:"class:form-control" }}
+            </div>
+        </div>
+        {% if prediction is not None %}
+            <h2 class="resultado">Precio Predicho: {{ prediction|floatformat:2 }} USD</h2>
+            <p>Recuerda que esto es un resultado aproximado, el valor real puede estar sujeto a variables no consideradas aqui</p>
+        {% endif %}
+
+        <!-- Botones -->
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary">Predecir</button>
+            <button type="submit" name="save_prediction" class="btn btn-secondary">Guardar Predicción</button>
+        </div>
+    </form>
+</main>
+{% endblock %}

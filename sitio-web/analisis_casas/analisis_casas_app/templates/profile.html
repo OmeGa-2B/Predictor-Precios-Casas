@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Perfil del Usuario
+{% endblock %}
+
+{% block content %}
+<main class="main_perfil">
+    <div class="container">
+        <h1>Perfil del Usuario</h1>
+        <p><strong>Nombre:</strong> {{ user.first_name }}</p>
+        <p><strong>Apellidos:</strong> {{ user.last_name }}</p>
+        <p><strong>Correo:</strong> {{ user.email }}</p>
+        <a href="{% url 'edit_profile' %}" class="btn btn-warning">Editar Perfil</a>
+
+        <h2 class="mt-4">Casas Presupuestadas</h2>
+        {% if casas.exists %}
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Habitaciones</th>
+                        <th scope="col">Baños</th>
+                        <th scope="col">Área habitable</th>
+                        <th scope="col">Área del lote</th>
+                        <th scope="col">Pisos</th>
+                        <th scope="col">Frente al agua</th>
+                        <th scope="col">Vista</th>
+                        <th scope="col">Condición</th>
+                        <th scope="col">Calidad</th>
+                        <th scope="col">Área sobre el suelo</th>
+                        <th scope="col">Área del sótano</th>
+                        <th scope="col">Año de construcción</th>
+                        <th scope="col">Año de renovación</th>
+                        <th scope="col">Código postal</th>
+                        <th scope="col">Precio Predicho</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        {% for casa in casas %}
+                        <tr>
+                            <td>{{ casa.bedrooms }}</td>
+                            <td>{{ casa.bathrooms }}</td>
+                            <td>{{ casa.sqft_living }}</td>
+                            <td>{{ casa.sqft_lot }}</td>
+                            <td>{{ casa.floors }}</td>
+                            <td>{{ casa.waterfront }}</td>
+                            <td>{{ casa.view }}</td>
+                            <td>{{ casa.condition }}</td>
+                            <td>{{ casa.grade }}</td>
+                            <td>{{ casa.sqft_above }}</td>
+                            <td>{{ casa.sqft_basement }}</td>
+                            <td>{{ casa.yr_built }}</td>
+                            <td>{{ casa.yr_renovated }}</td>
+                            <td>{{ casa.zipcode }}</td>
+                            <td>{{ casa.predicted_price }}</td>
+                            <td>
+                                <form method="post" action="{% url 'profile' %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="casa_id" value="{{ casa.id }}">
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p>No hay casas presupuestadas.</p>
+        {% endif %}
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,208 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 5rem;
+    text-align: center;
+}
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f5f5f5;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.logout-form {
+    display: inline;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+}
+
+.btn-link:hover {
+    text-decoration: none;
+    color: cornflowerblue;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.hero .btn {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s,transform 0.5s ease;
+}
+
+.hero .btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.servicios{
+    margin: 3rem 8rem 3rem 8rem;
+}
+.servicios h1{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.servicios img{
+    height: 25rem;
+    min-height: 5rem;
+}
+.servicios h3{
+    text-align: center;
+}
+
+.comentarios{
+    margin: 0rem 7rem 0rem 7rem;
+}
+
+.statistics {
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin: 0rem 5rem 5rem 5rem;
+}
+
+.statistics h2{
+    margin-bottom: 4rem;
+}
+
+
+.call-to-action {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.call-to-action p {
+    font-size: 1.2rem;
+}
+
+.call-to-action .btn {
+    background-color: white;
+    color: #4CAF50;
+    border: 2px solid white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.call-to-action .btn:hover {
+    background-color: #45a049;
+    color: white;
+}
+
+.main_login{
+    flex: 1;
+    margin: 2rem auto;
+    padding: 3rem;
+    background: white;
+    border-radius: 5px;
+    max-width: 30%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main_edit{
+    flex: 1;
+    margin: 2rem auto;
+    padding: 3rem;
+    background: white;
+    border-radius: 5px;
+    max-width: 30%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main_registro{
+    margin: 2rem auto;
+    padding: 3rem;
+    background: white;
+    border-radius: 5px;
+    max-width: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main_registro h1{
+    margin-bottom: 2rem;
+}
+
+.main_registro button{
+    margin-bottom: 2rem;
+}
+
+.main_perfil{
+    margin: 2rem auto;
+    padding: 3rem;
+    background: white;
+    border-radius: 5px;
+    max-width: 90%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.main_prediccion {
+    margin: 2rem auto;
+    padding: 1rem;
+    background: white;
+    border-radius: 5px;
+    max-width: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-formulario {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.resultado {
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+span{
+    width: 30rem;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+    text-align: left;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    bottom: 0;
+    width: 100%;
+    margin-top: 4rem;
+}
